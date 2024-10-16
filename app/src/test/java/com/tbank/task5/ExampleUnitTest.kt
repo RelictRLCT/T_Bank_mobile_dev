@@ -1,4 +1,4 @@
-package com.example.jokes_application
+package com.tbank.task5
 
 import org.junit.Test
 
