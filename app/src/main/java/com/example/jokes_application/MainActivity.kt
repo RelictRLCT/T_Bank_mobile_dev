@@ -5,12 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
-data class Joke(
-    val category: String,
-    val question: String,
-    val answer: String
-)
+import com.example.jokes_application.models.Joke
 
 
 class MainActivity : ComponentActivity() {

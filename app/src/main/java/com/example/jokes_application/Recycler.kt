@@ -3,6 +3,7 @@ package com.example.jokes_application
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.jokes_application.models.Joke
 
 class JokesRecyclerViewAdapter(private val jokeList: List<Joke>) : RecyclerView.Adapter<JokeViewHolder>() {
 
