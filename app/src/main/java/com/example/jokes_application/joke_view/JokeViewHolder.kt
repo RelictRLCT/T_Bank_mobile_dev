@@ -1,8 +1,9 @@
-package com.example.jokes_application
+package com.example.jokes_application.joke_view
 
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.jokes_application.R
 import com.example.jokes_application.models.Joke
 
 class JokeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
