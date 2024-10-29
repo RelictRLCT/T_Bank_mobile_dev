@@ -1,47 +1,62 @@
 package com.example.jokes_application
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.jokes_application.ui.theme.Jokes_applicationTheme
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.jokes_application.models.Joke
+
 
 class MainActivity : ComponentActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            Jokes_applicationTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Белошапка Евгений",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Привет, $name!",
-        modifier = modifier
-    )
-}
+        setContentView(R.layout.activity_main)
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Jokes_applicationTheme {
-        Greeting("Android")
+        val jokes = listOf(
+            Joke(
+                "Неадекватная бредятина",
+                "\"Не добьётесь своего!\"",
+                "- Олег Тиньков сменил фамилию на Т"
+            ),
+            Joke(
+                "Чёрный юмор",
+                "Любимая песня Джорджа Флойда?",
+                "Розовое вино"
+            ),
+            Joke(
+                "Бредни, россказни и небылицы",
+                "Как избавиться от паразитов?",
+                "Ком паразитов вышел утром после этого метода. " +
+                        "На ночь перед сном нужно выпить пару капель копеечного советского " +
+                        "(угадайте)."
+            ),
+            Joke(
+                "Бредни, россказни и небылицы",
+                "На похоронах усопшего так хвалили,",
+                "что вдова два раза подходила к гробу, чтобы посмотреть, кто там лежит"
+            ),
+            Joke(
+                "Неадекватная бредятина",
+                "Почему медведь залез в машину и сгорел?",
+                "Ему было холодно"
+            ),
+            Joke(
+                "Неадекватная бредятина",
+                "Почему ему было холодно?",
+                "Он был ГОООООООООООЛ"
+            ),
+            Joke(
+                "Неадекватная бредятина",
+                "Почему в Румынии умерли все лебеди?",
+                "Цыгане быстрее доплывают до хлеба"
+            ),
+        )
+
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = JokesRecyclerViewAdapter(jokes)
     }
 }
