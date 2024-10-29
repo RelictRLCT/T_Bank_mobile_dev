@@ -10,8 +10,7 @@ class JokeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val questionView: TextView = itemView.findViewById(R.id.questionTextView)
     val answerView: TextView = itemView.findViewById(R.id.answerTextView)
 
-    fun update(jokeList: List<Joke>, position: Int) {
-        val joke = jokeList[position]
+    fun update(joke: Joke) {
         categoryView.text = joke.category
         questionView.text = joke.question
         answerView.text = joke.answer

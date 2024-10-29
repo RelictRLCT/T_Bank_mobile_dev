@@ -14,7 +14,7 @@ class JokesRecyclerViewAdapter(private val jokeList: List<Joke>) : RecyclerView.
     }
 
     override fun onBindViewHolder(holder: JokeViewHolder, position: Int) {
-        holder.update(jokeList, position)
+        holder.update(jokeList[position])
     }
 
     override fun getItemCount(): Int = jokeList.size
