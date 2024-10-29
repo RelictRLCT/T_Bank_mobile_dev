@@ -22,6 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.jokes_application.joke_detail_activity.JokeDetailActivity">
+        </activity>
     </application>
 
 </manifest>

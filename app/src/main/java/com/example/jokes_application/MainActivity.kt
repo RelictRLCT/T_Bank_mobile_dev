@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.jokes_application.joke_view.JokesRecyclerViewAdapter
 import com.example.jokes_application.models.Joke
 
 
