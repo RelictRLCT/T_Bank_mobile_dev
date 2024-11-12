@@ -9,9 +9,9 @@ import com.example.jokes_application.models.Joke
 class JokeViewHolder(itemView: View, val onJokeClicked: (Joke) -> Unit)
     : RecyclerView.ViewHolder(itemView) {
 
-    val categoryView: TextView = itemView.findViewById(R.id.categoryTextView)
-    val questionView: TextView = itemView.findViewById(R.id.questionTextView)
-    val answerView: TextView = itemView.findViewById(R.id.answerTextView)
+    private val categoryView: TextView = itemView.findViewById(R.id.categoryTextView)
+    private val questionView: TextView = itemView.findViewById(R.id.questionTextView)
+    private val answerView: TextView = itemView.findViewById(R.id.answerTextView)
 
     fun update(joke: Joke) {
         categoryView.text = joke.category
@@ -21,4 +21,3 @@ class JokeViewHolder(itemView: View, val onJokeClicked: (Joke) -> Unit)
         itemView.setOnClickListener { onJokeClicked(joke) }
     }
 }
-

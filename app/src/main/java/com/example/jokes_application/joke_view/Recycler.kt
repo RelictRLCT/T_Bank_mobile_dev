@@ -6,8 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.jokes_application.R
 import com.example.jokes_application.models.Joke
 
-class JokesRecyclerViewAdapter(val jokeList: List<Joke>, val onJokeClicked: (Joke) -> Unit)
-    : RecyclerView.Adapter<JokeViewHolder>() {
+class JokesRecyclerViewAdapter(
+    private val jokeList: List<Joke>,
+    private val onJokeClicked: (Joke) -> Unit
+) : RecyclerView.Adapter<JokeViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JokeViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -21,4 +23,3 @@ class JokesRecyclerViewAdapter(val jokeList: List<Joke>, val onJokeClicked: (Jok
 
     override fun getItemCount(): Int = jokeList.size
 }
-
